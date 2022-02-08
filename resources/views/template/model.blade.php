@@ -1,0 +1,156 @@
+@extends('template.layout.setting')
+
+@section('content')
+<div class="container" style="padding-top:30px;">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                Page Creator - Model
+
+
+                <form action="<?= url('/')?>/create_model" method="post">
+
+                    @csrf
+
+                    <input type="hidden" name="id_form" value="<?= rand()?>">
+
+                    <div class="row" style="padding-top:30px">
+                        <div class="col-md-4">
+                            <label>Class Name</label>
+                            <input type="text" class="form-control" name="class_name" onblur="this.value=removeSpaces(this.value);">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label>Folder Path <span style="font-size:10px; color:red;"><i>(Option : If your have folder for model)</i></span></label>
+                            <input type="text" class="form-control" name="model_path" placeholder="Start with '\'" onblur="this.value=removeSpaces(this.value);">
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="row" style="padding-top:30px">
+                        <div class="col-md-4">
+                            <label>Field</label>
+                            <input type="text" class="form-control" name="field_name" onblur="this.value=removeSpaces(this.value);">
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <label>Action</label>
+                            <br>
+                            <button type="button" class="btn btn-primary btn-sm" onclick="add_field(); return false;">Add</button>
+                        </div>
+                        
+                    </div>
+
+
+
+                    <div class="row" style="padding-top:30px">
+                        <div class="col-md-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>Field</th>
+                                    <th>Delete</th>
+                                </thead>
+                                <tbody id="list_fields">
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="row" style="padding-top:30px; float: right;">
+                        <button type="submit" class="btn btn-success btn-sm">Save</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    var base = "<?= url('/')?>";
+
+    function add_field()
+    {
+        var id_form = $("input[name='id_form']").val();
+        var field_name = $("input[name='field_name']").val();
+
+        var data = {
+            id_form : id_form,
+            field_name : field_name,
+            _token: "{{ csrf_token() }}",
+        };
+
+        $.ajax({
+            type:'POST',
+            url:base+'/model_fields',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data : data,
+            success:function(data){
+                $("input[name='field_name']").val('');
+                list_field();
+            }
+        });
+    }
+
+
+    function list_field()
+    {
+        var id_form = $("input[name='id_form']").val();
+        var data = {
+            id_form : id_form,
+            _token: "{{ csrf_token() }}",
+        };
+
+        $.ajax({
+            type:'POST',
+            url:base+'/model_list_field',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data : data,
+            success:function(data){
+                if(data){
+                    $("#list_fields").html(data);
+                } else {
+                    $("#list_fields").html('');
+                }
+            }
+        });
+
+    }
+
+    
+    function delete_direct(table,id)
+    {
+        var id_form = $("input[name='id_form']").val();
+        var data = {
+            id_form : id_form,
+            table:table,
+            id :id,
+            _token: "{{ csrf_token() }}",
+        };
+
+        $.ajax({
+            type:'POST',
+            url:base+'/delete_direct',
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            data : data,
+            success:function(data){
+                list_field();
+            }
+        });
+    }
+
+    function removeSpaces(string) {
+        return string.split(' ').join('');
+    }
+</script>
+
+@endsection
