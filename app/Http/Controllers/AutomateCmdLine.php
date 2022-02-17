@@ -34,7 +34,7 @@ class AutomateCmdLine extends Controller
             $class = $class_name;
             $directory = $controller_path;
 
-            $path_folder = 'C:\xampp\htdocs\rms\app\Http\Controllers'.$directory;
+            $path_folder = 'C:\inetpub\wwwroot\rms_framework\app\Http\Controllers'.$directory;
 
             //dd($path_folder);
             if (!file_exists($path_folder)) {
@@ -42,7 +42,7 @@ class AutomateCmdLine extends Controller
             }
 
 
-            $path_base = 'C:\xampp\htdocs\rms\app\Http\Controllers'.$directory;
+            $path_base = 'C:\inetpub\wwwroot\rms_framework\app\Http\Controllers'.$directory;
             // $file = '\TestController.php';
 
             $slash = "/";
@@ -314,7 +314,7 @@ class AutomateCmdLine extends Controller
             $class = $class_name;
             $directory = $model_path;
 
-            $path_folder = 'C:\xampp\htdocs\rms\app\Http\Models'.$directory;
+            $path_folder = 'C:\inetpub\wwwroot\rms_framework\app\Http\Models'.$directory;
 
             //dd($path_folder);
             if (!file_exists($path_folder)) {
@@ -322,7 +322,7 @@ class AutomateCmdLine extends Controller
             }
 
 
-            $path_base = 'C:\xampp\htdocs\rms\app\Http\Models'.$directory;
+            $path_base = 'C:\inetpub\wwwroot\rms_framework\app\Http\Models'.$directory;
             // $file = '\TestController.php';
 
             $slash = "/";
@@ -604,7 +604,7 @@ class AutomateCmdLine extends Controller
 
         
 
-            $path_folder = 'C:\xampp\htdocs\rms\resources\views'.$directory;
+            $path_folder = 'C:\inetpub\wwwroot\rms_framework\resources\views'.$directory;
 
             //dd($path_folder);
             if (!file_exists($path_folder)) {
@@ -612,7 +612,7 @@ class AutomateCmdLine extends Controller
             }
 
 
-            $path_base = 'C:\xampp\htdocs\rms\resources\views'.$directory;
+            $path_base = 'C:\inetpub\wwwroot\rms_framework\resources\views'.$directory;
             // $file = '\TestController.php';
 
             $slash = "/";
@@ -1091,7 +1091,7 @@ class AutomateCmdLine extends Controller
 
 
 
-        $path_base = 'C:\xampp\htdocs\rms\routes\web.php';
+        $path_base = 'C:\inetpub\wwwroot\rms_framework\routes\web.php';
         $fp = fopen($path_base, 'a');//opens file in append mode  
 
 
