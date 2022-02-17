@@ -28,9 +28,9 @@
                <tbody>
                   <tr>
                      <td class="first_row">1</td>
-                     <td class="">bpa_id</td>
-                     <td class="">risk_register_id</td>
-                     <td class="">rap_id</td>
+                     <td class=""><a href="<?= url('/')?>/bpa_details" style="color: #468ed5;">bpa_id</a></td>
+                     <td class=""><a href="<?= url('/')?>/rr_details" style="color: #468ed5;">risk_register_id</a></td>
+                     <td class=""><a href="<?= url('/')?>/rap_details" style="color: #468ed5;">rap_id</a></td>
                      <td class="">business_process</td>
                      <td class="">risk_event</td>
                      <td class="">additional_control</td>

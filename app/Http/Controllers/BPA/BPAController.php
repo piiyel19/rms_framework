@@ -45,5 +45,27 @@ class BPAController extends Controller
 
     }
 
+
+    public function details(Request $request)
+    {
+        // $id = $request->id;
+        // DB::table("bpa")
+        //     ->where("id", $id)->get();
+
+        return view('bpa.details');
+
+    }
+
+
+    public function rap(Request $request)
+    {
+        // $id = $request->id;
+        // DB::table("bpa")
+        //     ->where("id", $id)->get();
+
+        return view('bpa.bpa_rap');
+
+    }
+
 }
 

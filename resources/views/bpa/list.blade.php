@@ -34,7 +34,7 @@
                <tbody>
                   <tr>
                      <td class="first_row">1</td>
-                     <td class="">bpa</td>
+                     <td class=""><a href="<?= url('/')?>/bpa_details" style="color: #468ed5;">bpa</a></td>
                      <td class="">division</td>
                      <td class="">department</td>
                      <td class="">business_process</td>

@@ -255,9 +255,9 @@
                       </div>
                     </div>
                     <ul id="admin_list" style="visibility: hidden;display: block;z-index:100; position: absolute; width: 100px; padding-top:0px;">
-                        <li class="li-related"><a href="<?= url('')?>/archieve/2021" class="li-a-contain">Company</a></li>
-                        <li class="li-related"><a href="<?= url('')?>/archieve/2020" class="li-a-contain">Division</a></li>
-                        <li class="li-related"><a href="<?= url('')?>/archieve/2019" class="li-a-contain">Unit</a></li>
+                        <li class="li-related"><a href="<?= url('')?>/company" class="li-a-contain">Company</a></li>
+                        <li class="li-related"><a href="<?= url('')?>/division" class="li-a-contain">Division</a></li>
+                        <li class="li-related"><a href="<?= url('')?>/unit" class="li-a-contain">Unit</a></li>
                     </ul>
                   </div>
                 </div>  
@@ -411,31 +411,31 @@
                   </div>
                   <div class="card-body segment_c_card_body">
                     
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/doc_pending_review" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> Pending HOD's Approval
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/view_documents" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> View Documents
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/rmd_pending_for_review" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> RMD Pending For Review
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/view_documents" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> View Documents
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/view" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> View 
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/audit_logs" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> Activity Logs 
                     </a>
                     <hr>
-                    <a href="" class="segment_c_li">
+                    <a href="<?= url('/')?>/pending_hodv_endorse" class="segment_c_li">
                       <i class="fa fa-chevron-right" aria-hidden="true"></i> Pending HoDv's 
                       <br><span style="padding-left:12px;">Endorsement</span> 
                     </a>

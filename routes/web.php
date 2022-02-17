@@ -82,8 +82,28 @@ Route::get('/bpa_list', 'App\Http\Controllers\BPA\BPAController@list')->name('bp
 Route::get('/bpa_create', 'App\Http\Controllers\BPA\BPAController@create')->name('bpa_create');
 
 // RR
-Route::get('/rr_list', 'App\Http\Controllers\\RR\RRController@list')->name('rr_list');
+Route::get('/rr_list', 'App\Http\Controllers\RR\RRController@list')->name('rr_list');
 
 // RAP
-Route::get('/rap_list', 'App\Http\Controllers\\RAP\RAPController@list')->name('rap_list');
+Route::get('/rap_list', 'App\Http\Controllers\RAP\RAPController@list')->name('rap_list');
 Route::get('/audit_logs', 'App\Http\Controllers\AuditTrails\AuditLogsController@list')->name('audit_logs');
+Route::get('/bpa_details', 'App\Http\Controllers\BPA\BPAController@details')->name('bpa_details');
+Route::get('/bpa_rap', 'App\Http\Controllers\BPA\BPAController@rap')->name('bpa_rap');
+Route::get('/rr_details', 'App\Http\Controllers\RR\RRController@details')->name('rr_details');
+
+
+Route::get('/rap_details', 'App\Http\Controllers\RAP\RAPController@details')->name('rap_details');
+
+
+
+Route::get('/doc_pending_review', 'App\Http\Controllers\RReview\RReviewController@doc_pending_review')->name('doc_pending_review');
+Route::get('/pending_hodv_endorse', 'App\Http\Controllers\RReview\RReviewController@pending_hodv_endorse')->name('pending_hodv_endorse');
+Route::get('/rmd_pending_for_review', 'App\Http\Controllers\RReview\RReviewController@rmd_pending_for_review')->name('rmd_pending_for_review');
+Route::get('/view', 'App\Http\Controllers\RReview\RReviewController@view')->name('view');
+Route::get('/view_documents', 'App\Http\Controllers\RReview\RReviewController@view_documents')->name('view_documents');
+
+
+
+Route::get('/company', 'App\Http\Controllers\Admin\AdminController@company')->name('company');
+Route::get('/division', 'App\Http\Controllers\Admin\AdminController@division')->name('division');
+Route::get('/unit', 'App\Http\Controllers\Admin\AdminController@unit')->name('unit');

@@ -28,5 +28,16 @@ class RAPController extends Controller
 
     }
 
+
+    public function details(Request $request)
+    {
+        // $id = $request->id;
+        // DB::table("")
+        //     ->where("id", $id)->get();
+
+        return view('rap.details');
+
+    }
+
 }
 
